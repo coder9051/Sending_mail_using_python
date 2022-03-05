@@ -72,3 +72,10 @@ session.quit()
 ```
 # NOTE :
 This code can send simple mail which doesn’t have any attachment or any subject.
+
+# Conclusion
+This code can send plain text emails with no attachments or subject lines. 
+
+Feel free to copy it and make changes as needed. 
+
+Enjoy sending emails with Python, and don't forget to keep it spam-free!
