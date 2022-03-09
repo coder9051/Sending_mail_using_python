@@ -9,9 +9,9 @@ import smtplib
 smtpObj = smtplib.SMTP( [host [, port [, local_hostname]]] )
 ```
 # Outline
-* [Basic Steps](#Basic-Steps)
-* [SMTP](#SMTP)
-* [Python Code](#Python-Code)
+* [SMTP](#smtp)
+* [Algorithm](#algorithm)
+* [Python Code](#python-code)
 
 # Python : Sending Emails using SMTPLIB
 I recently dived into Python 3 as a learning exercise to explore how I could send a batch of emails. In a production setting, there may be more straightforward approaches, but the following worked well for me.
@@ -19,24 +19,6 @@ I recently dived into Python 3 as a learning exercise to explore how I could sen
 So, let's say you have a list of contacts with their names and email addresses. And you'd like to send a message to each of those people, with the phrase "Dear [name]" at the head of the message.
 
 You can save the contact information in a file rather than a database for ease of use. You can also save a file with the message template you want to send.
-
-## Basic Steps :
-Here are four basic steps for sending emails using Python:
-
-1. First and foremost, the "smtplib" library must be imported.
-2. After that, we'll use its instance SMTP to wrap an SMTP connection to create a session. 
-```python
-s = smtplib.SMTP('smtp.gmail.com', 587)
-```
-You must pass the first parameter, which is the server's location, and the second value, which is the port to use. The port number 587 is used for Gmail. Different port numbers are used by different websites.
-
-3. For security reasons, now put the SMTP connection in the TLS mode. TLS (Transport Layer Security) encrypts all the SMTP commands. After that, for security and authentication, you need to pass your Gmail account credentials in the login instance.The compiler will show an authentication error if you enter invalid email id or password.
-
-4. Store the message you need to send in a variable say, message. Using the sendmail() instance, send your message. sendmail() uses three parameters: sender_email_id, receiver_email_id and message_to_be_sent. The parameters need to be in the same sequence.
-
-5. After you have completed your task, terminate the SMTP session by using quit().
-        
-Let me now take you through the entire procedure.
 
 ## SMTP
 Simple Mail Transfer Protocol (SMTP) is a protocol, which handles sending e-mail and routing e-mail between mail servers.
@@ -62,7 +44,29 @@ An SMTP object has an instance method called sendmail, which is typically used t
 2. The receivers − A list of strings, one for each recipient.
 3. The message − A message as a string formatted as specified in the various RFCs.
 
-## Python Code :
+## Algorithm
+
+Here are four basic steps for sending emails using Python:
+
+1. First and foremost, the "smtplib" library must be imported.
+
+2. After that, we'll use its instance SMTP to wrap an SMTP connection to create a session. 
+
+```python
+
+s = smtplib.SMTP('smtp.gmail.com', 587)
+
+```
+
+You must pass the first parameter, which is the server's location, and the second value, which is the port to use. The port number 587 is used for Gmail. Different port numbers are used by different websites.
+
+3. For security reasons, now put the SMTP connection in the TLS mode. TLS (Transport Layer Security) encrypts all the SMTP commands. After that, for security and authentication, you need to pass your Gmail account credentials in the login instance.The compiler will show an authentication error if you enter invalid email id or password.
+
+4. Store the message you need to send in a variable say, message. Using the sendmail() instance, send your message. sendmail() uses three parameters: sender_email_id, receiver_email_id and message_to_be_sent. The parameters need to be in the same sequence.
+
+5. After you have completed your task, terminate the SMTP session by using quit().    
+
+## Python Code
        
 ```python
 import smtplib
